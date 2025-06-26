@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
-import 'home_page.dart'; // move the homepage widget to this file
+import 'package:flutter/services.dart';
+import 'home_page.dart'; 
+import 'tts_service.dart';
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await TTSService.initTTS();
+  await SystemChrome.setPreferredOrientations([
+    DeviceOrientation.landscapeLeft,
+    DeviceOrientation.landscapeRight,
+  ]);
   runApp(const SolarExploraApp());
 }
 

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'explore_page.dart';
+import 'planet_match_game.dart';
+import 'quiz_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -85,23 +87,41 @@ class _HomePageState extends State<HomePage> {
               ),
 
               // 🌟 Title and subtitle in the center
-              const SizedBox(height: 30),
-              Text(
-                'SolarExplora',
-                style: const TextStyle(
-                  fontSize: 48,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
+              const SizedBox(height: 0),
+              Positioned(
+                top: 0,
+                left: 0,
+                right: 0,
+                child: Padding(
+                    padding: const EdgeInsets.only(top: 8), // Minimal top padding
+                    child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                            Text(
+                            'SolarExplora',
+                            style: TextStyle(
+                                fontSize: 48,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                                ),
+                            ),
+        // SizedBox(height: 6),
+        // Text(
+        //   isSpanish
+        //       ? '¡Una plataforma bilingüe para explorar el Sistema Solar\nde una manera divertida y atractiva!'
+        //       : 'A bilingual platform to explore the Solar System\nin a fun and engaging way!!',
+        //   textAlign: TextAlign.center,
+        //   style: TextStyle(
+        //     color: Colors.white,
+        //     fontSize: 18,
+        //   ),
+        // ),
+                        ],
+                    ),
                 ),
-              ),
-              const SizedBox(height: 10),
-              Text(
-                isSpanish
-                    ? '¡Una plataforma bilingüe para explorar el Sistema Solar\nde una manera divertida y atractiva!'
-                    : 'A bilingual platform to explore the Solar System\nin a fun and engaging way!!',
-                textAlign: TextAlign.center,
-                style: const TextStyle(color: Colors.white, fontSize: 20),
-              ),
+            ),
+
+
 
               const Spacer(), // Pushes the buttons to the bottom
 
@@ -139,19 +159,30 @@ class _HomePageState extends State<HomePage> {
                     GameCard(
                         emoji: '',
                         title: isSpanish ? 'Juego de Planetas' : 'Planet Match',
-                        onTap: () {},
-                    ),
-                    const SizedBox(height: 20),
-                    GameCard(
-                        emoji: '',
-                        title: isSpanish ? 'Construye un Cohete' : 'Build a Rocket',
-                        onTap: () {},
-                    ),
+                        onTap: () 
+                            {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (_) => const PlanetMatchGame()),
+                                );
+                            },
+                        ),
+                    // const SizedBox(height: 20),
+                    // GameCard(
+                    //     emoji: '',
+                    //     title: isSpanish ? 'Construye un Cohete' : 'Build a Rocket',
+                    //     onTap: () {},
+                    // ),
                     const SizedBox(height: 20),
                     GameCard(
                         emoji: '',
                         title: isSpanish ? 'Quiz del Espacio' : 'Space Quiz',
-                        onTap: () {},
+                        onTap: () {
+                            Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (_) => const QuizPage()),
+                                );
+                        },
                     ),
                     const SizedBox(height: 30),
                     ],

@@ -32,6 +32,7 @@ dependencies:
     sdk: flutter
   lottie: ^2.6.0
   rive: ^0.12.4
+  flutter_tts: ^3.8.2
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -64,7 +65,27 @@ flutter:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
     - assets/space_bg.json
+    - assets/space_quiz_questions.json
     - assets/rive/solar_system.riv
+    - assets/solarsystem1.jpg
+    - assets/Sun.png
+    - assets/Mercury.png
+    - assets/Venus.png
+    - assets/Earth.png
+    - assets/Mars.png
+    - assets/Jupiter.png
+    - assets/Saturn.png
+    - assets/Uranus.png
+    - assets/Neptune.png
+    - assets/planet_tiles/Sun_tile.png
+    - assets/planet_tiles/Mercury_tile.png
+    - assets/planet_tiles/Venus_tile.png
+    - assets/planet_tiles/Earth_tile.png
+    - assets/planet_tiles/Mars_tile.png
+    - assets/planet_tiles/Jupiter_tile.png
+    - assets/planet_tiles/Saturn_tile.png
+    - assets/planet_tiles/Uranus_tile.png
+    - assets/planet_tiles/Neptune_tile.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
